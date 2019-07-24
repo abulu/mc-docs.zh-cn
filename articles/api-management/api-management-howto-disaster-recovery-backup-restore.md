@@ -104,7 +104,7 @@ namespace GetTokenResourceManagerRequests
         static void Main(string[] args)
         {
             var authenticationContext = new AuthenticationContext("https://login.microsoftonline.com/{tenant id}");
-            var result = authenticationContext.AcquireTokenAsync("https://management.azure.com/", "{application id}", new Uri("{redirect uri}"), new PlatformParameters(PromptBehavior.Auto)).Result;
+            var result = authenticationContext.AcquireTokenAsync("https://management.chinacloudapi.cn/", "{application id}", new Uri("{redirect uri}"), new PlatformParameters(PromptBehavior.Auto)).Result;
 
             if (result == null) {
                 throw new InvalidOperationException("Failed to obtain the JWT token");
@@ -147,7 +147,7 @@ request.Headers.Add(HttpRequestHeader.Authorization, "Bearer " + token);
 若要备份 API 管理服务问题，请发送以下 HTTP 请求：
 
 ```http
-POST https://management.azure.cn/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/backup?api-version={api-version}
+POST https://management.chinacloudapi.cn/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/backup?api-version={api-version}
 ```
 
 其中：
@@ -187,7 +187,7 @@ POST https://management.azure.cn/subscriptions/{subscriptionId}/resourceGroups/{
 若要从之前创建的备份还原 API 管理服务，请发出以下 HTTP 请求：
 
 ```http
-POST https://management.azure.cnsubscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/restore?api-version={api-version}
+POST https://management.chinacloudapi.cn/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/restore?api-version={api-version}
 ```
 
 其中：
